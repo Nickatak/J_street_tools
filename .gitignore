@@ -3,3 +3,5 @@ venv/
 
 #Any Python byte-code files.
 *.pyc
+
+*.sqlite3
