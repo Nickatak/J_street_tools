@@ -26,3 +26,28 @@ class UserManager(BaseUserManager):
         user.save()
 
         return user
+
+class User(AbstractBaseUser, PermissionsMixin):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    username = models.CharField(db_index=True, max_length=255, unique=True)
+    email = models.EmailField(db_index=True, unique=True)
+
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTeimField(auto_now=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    objects = UserManager()
+
+    def __str__(self):
+
+        return "{}, {}; email: {}".format(self.last_name, self.first_name, self.email)
+    def get_full_name(self):
+        return "{} {}".format(self.first_name, self.last_name)
+
+    def get_short_name(self):
+        return self.first_name
