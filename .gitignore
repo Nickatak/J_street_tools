@@ -6,3 +6,6 @@ venv/
 
 #SQLite 3 DB file (default for django).
 *.sqlite3
+
+# The migrations folder (in each app).
+migrations/
