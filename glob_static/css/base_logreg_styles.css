@@ -14,11 +14,6 @@ html, body {
     display: flex;
 }
 
-#form-box {
-    margin:auto;
-}
-
-
 form {
   max-width: 300px;
   margin: 10px auto;
@@ -102,6 +97,14 @@ label {
 label.light {
   font-weight: 300;
   display: inline;
+}
+
+#form-box {
+    margin:auto;
+}
+
+.error {
+    color: red;
 }
 
 .number {
