@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>JStreet CSV Tool</title>
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    </head>
+    
+    <body>
+        <form id="csv-form">
+            <div class="form-element">
+                <label for="csv">Upload your CSV:</label> <input type="file" name="csv" accept=".csv">
+            </div>
+            <div class="form-element">
+                <div class="stat-disp">Status: <div id="status" class="stat-disp">Awaiting File Input</div></div>
+            </div>
+        </form>
+
+        <div id="output-box">
+            <div id="output">
+            </div>
+        </div>
+    </body>
+</html>
